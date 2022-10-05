@@ -73,5 +73,40 @@ final class SignupFormModelValidatorTests: XCTestCase {
         // Assert
         XCTAssertTrue(isValid, "SignupFormModelValidator failed to validate valid last name should return true")
     }
+    
+    func test_SignupFormModelValidator_WhenValidEmailProvided_ShouldReturnTrue() {
+        // Act
+        let isValid = sut.isEmailValid(email: "email@email.com")
+        
+        // Assert
+        XCTAssertTrue(isValid, "SignupFormModelValidator failed to return true for a valid email provided.")
+    }
+    
+    func test_SignupFormModelValidator_WhenInvalidEmail_ShouldReturnFalse() {
+        // Act
+        let isNotValidNoPeriod = sut.isEmailValid(email: "email@emailcom")
+        let isNotValidNoAtSymbol = sut.isEmailValid(email: "emailemail.com")
+        
+        // Assert
+        XCTAssertFalse(isNotValidNoPeriod, "SignupFormModelValidator failed to return false for an email missing a period.")
+        XCTAssertFalse(isNotValidNoAtSymbol, "SignupFormModelValidator failed to return false for an email missing an @ symbole.")
+    }
+    
+    func test_SignupFormModelValidator_WhenPasswordsDoNotMatch_ShouldReturnFalse() {
+        // Act
+        let doesPasswordMatch = sut.doPasswordsMatch(password: "password", matchPassword: "passswooord")
+        
+        // Assert
+        XCTAssertFalse(doesPasswordMatch, "SignupFormModelValidator failed to validate false against passwords that do not match.")
+    }
+    
+    func test_SignupFormModelValidator_WhenPasswordsMatch_ShouldReturnTrue() {
+        // Act
+        let doesPasswordMatch = sut.doPasswordsMatch(password: "password", matchPassword: "password")
+        
+        // Assert
+        XCTAssertTrue(doesPasswordMatch, "SignupFormModelValidator failed to validate true against passwords that DO MATCH!")
+    }
+    
 
 }

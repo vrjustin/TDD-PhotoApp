@@ -28,4 +28,26 @@ class SignupFormModelValidator {
         
         return retValue
     }
+    
+    func isEmailValid(email: String) -> Bool {
+        var retValue = false
+        
+        if email.contains(".") &&
+            email.contains("@") &&
+            email.count >= SignupConstants.minEmailLength {
+            retValue = true
+        }
+        
+        return retValue
+    }
+    
+    func doPasswordsMatch(password: String, matchPassword: String) -> Bool {
+        var retValue = false
+        
+        if password == matchPassword {
+            retValue = true
+        }
+        
+        return retValue
+    }
 }
