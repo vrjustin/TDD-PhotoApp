@@ -49,5 +49,29 @@ final class SignupFormModelValidatorTests: XCTestCase {
         //Assert
         XCTAssertFalse(isFirstNameValid, "SignupFormModelValidator failed to validate false on a too long first name.")
     }
+    
+    func test_SignupFormModelValidator_WhenLastNameProvidedTooShort_ShouldReturnFalse() {
+        // Act
+        let isValid = sut.isLastNameValid(lastName: "L")
+        
+        // Assert
+        XCTAssertFalse(isValid, "SignupFormModelValidator failed to validate against too short of a last name.")
+    }
+    
+    func test_SignupFormModelValidator_WhenLastNameProvidedTooLong_ShouldReturnFalse() {
+        // Act
+        let isValid = sut.isLastNameValid(lastName: "Lastnamethatistoolongbeyond10")
+        
+        // Assert
+        XCTAssertFalse(isValid, "SignupFormModelValidator failed to validate against too long of a first name.")
+    }
+    
+    func test_SignupFormModelValidator_WhenValidLastNameProvided_ShouldReturnTrue() {
+        // Act
+        let isValid = sut.isLastNameValid(lastName: "Lastname")
+        
+        // Assert
+        XCTAssertTrue(isValid, "SignupFormModelValidator failed to validate valid last name should return true")
+    }
 
 }
