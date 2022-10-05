@@ -108,5 +108,21 @@ final class SignupFormModelValidatorTests: XCTestCase {
         XCTAssertTrue(doesPasswordMatch, "SignupFormModelValidator failed to validate true against passwords that DO MATCH!")
     }
     
+    func test_SignupFormModelValidator_WhenPasswordLengthTooShort_ShouldReturnFalse() {
+        // Act
+        let isValid = sut.isPasswordLengthValid(password: "pass")
+        
+        // Assert
+        XCTAssertFalse(isValid, "SignupFormModelValidator failed to return false for a too short of a password")
+    }
+    
+    func test_SignupFormModelValidator_WhenPasswordLengthCorrect_ShouldReturnTrue() {
+        // Act
+        let isValid = sut.isPasswordLengthValid(password: "password")
+        
+        // Assert
+        XCTAssertTrue(isValid, "SignupFormModelValidator failed to return true for a valid length of password")
+    }
+    
 
 }

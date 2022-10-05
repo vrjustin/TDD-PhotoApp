@@ -44,4 +44,8 @@ class SignupFormModelValidator {
     func doPasswordsMatch(password: String, matchPassword: String) -> Bool {
         return password == matchPassword
     }
+    
+    func isPasswordLengthValid(password: String) -> Bool {
+        return password.count >= SignupConstants.minPasswordLength
+    }
 }
