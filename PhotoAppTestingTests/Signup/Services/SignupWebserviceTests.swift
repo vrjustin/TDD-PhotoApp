@@ -20,15 +20,19 @@ final class SignupWebserviceTests: XCTestCase {
 
     func test_SignupWebservice_WhenGivenSuccessfulResponse_ReturnsSuccess() {
         // Assemble
-        let sut = SignupWebservice()
+        let sut = SignupWebservice(urlString: "https://tlyqhtlbn8.execute-api.us-east-1.amazonaws.com/prod/signup-mock-service/users")
         let signupFormRequestModel = SignupFormRequestModel(firstName: "firstName", lastName: "lastName", email: "firstName.lastName@email.com", password: "password")
+        let expectation = self.expectation(description: "Signup Webservice response expectation")
         
         // Act
         sut.signup(withForm: signupFormRequestModel) { (signupResponseModel, error) in
-            
+            //Assert
+            //Agreed response: "{\"status\":\"ok\"}"
+            XCTAssertEqual(signupResponseModel?.status, "ok")
+            expectation.fulfill()
         }
         
-        // Assert
+        self.wait(for: [expectation], timeout: 5)
         
     }
 

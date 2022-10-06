@@ -12,5 +12,5 @@ enum SignupError: Error {
 }
 
 struct SignupResponseModel: Decodable {
-    
+    let status: String
 }

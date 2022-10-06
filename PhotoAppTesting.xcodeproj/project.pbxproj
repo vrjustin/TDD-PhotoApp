@@ -90,16 +90,13 @@
 		1A80338428ED9A94008D1F1A /* PhotoAppTesting */ = {
 			isa = PBXGroup;
 			children = (
-				1A8033B228EE0209008D1F1A /* ViewModel */,
-				1A8033AF28EE01E5008D1F1A /* Services */,
+				1A8033B728EEF620008D1F1A /* Signup */,
 				1A80338528ED9A94008D1F1A /* AppDelegate.swift */,
 				1A80338728ED9A94008D1F1A /* SceneDelegate.swift */,
-				1A80338928ED9A94008D1F1A /* ViewController.swift */,
 				1A80338B28ED9A94008D1F1A /* Main.storyboard */,
 				1A80338E28ED9A95008D1F1A /* Assets.xcassets */,
 				1A80339028ED9A95008D1F1A /* LaunchScreen.storyboard */,
 				1A80339328ED9A95008D1F1A /* Info.plist */,
-				1A8033AB28EDA56A008D1F1A /* SignupConstants.swift */,
 			);
 			path = PhotoAppTesting;
 			sourceTree = "<group>";
@@ -107,13 +104,41 @@
 		1A80339E28ED9B7E008D1F1A /* PhotoAppTestingTests */ = {
 			isa = PBXGroup;
 			children = (
-				1A8033A628ED9C3B008D1F1A /* SignupFormModelValidatorTests.swift */,
-				1A8033AD28EE011D008D1F1A /* SignupWebserviceTests.swift */,
+				1A8033BC28EEF6F6008D1F1A /* Signup */,
 			);
 			path = PhotoAppTestingTests;
 			sourceTree = "<group>";
 		};
-		1A8033AF28EE01E5008D1F1A /* Services */ = {
+		1A8033B728EEF620008D1F1A /* Signup */ = {
+			isa = PBXGroup;
+			children = (
+				1A8033BB28EEF6C8008D1F1A /* Services */,
+				1A8033BA28EEF69F008D1F1A /* Controllers */,
+				1A8033B828EEF632008D1F1A /* Models */,
+			);
+			path = Signup;
+			sourceTree = "<group>";
+		};
+		1A8033B828EEF632008D1F1A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1A8033AB28EDA56A008D1F1A /* SignupConstants.swift */,
+				1A8033A928ED9D8C008D1F1A /* SignupFormModelValidator.swift */,
+				1A8033B328EE0316008D1F1A /* SignupFormRequestModel.swift */,
+				1A8033B528EEF4ED008D1F1A /* SignupResponseModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1A8033BA28EEF69F008D1F1A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				1A80338928ED9A94008D1F1A /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		1A8033BB28EEF6C8008D1F1A /* Services */ = {
 			isa = PBXGroup;
 			children = (
 				1A8033B028EE01F1008D1F1A /* SignupWebservice.swift */,
@@ -121,14 +146,29 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
-		1A8033B228EE0209008D1F1A /* ViewModel */ = {
+		1A8033BC28EEF6F6008D1F1A /* Signup */ = {
 			isa = PBXGroup;
 			children = (
-				1A8033A928ED9D8C008D1F1A /* SignupFormModelValidator.swift */,
-				1A8033B328EE0316008D1F1A /* SignupFormRequestModel.swift */,
-				1A8033B528EEF4ED008D1F1A /* SignupResponseModel.swift */,
+				1A8033BE28EEF70C008D1F1A /* Services */,
+				1A8033BD28EEF705008D1F1A /* Models */,
 			);
-			path = ViewModel;
+			path = Signup;
+			sourceTree = "<group>";
+		};
+		1A8033BD28EEF705008D1F1A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1A8033A628ED9C3B008D1F1A /* SignupFormModelValidatorTests.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1A8033BE28EEF70C008D1F1A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				1A8033AD28EE011D008D1F1A /* SignupWebserviceTests.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
