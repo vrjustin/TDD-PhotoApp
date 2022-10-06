@@ -20,6 +20,7 @@
 		1A8033B128EE01F1008D1F1A /* SignupWebservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A8033B028EE01F1008D1F1A /* SignupWebservice.swift */; };
 		1A8033B428EE0316008D1F1A /* SignupFormRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A8033B328EE0316008D1F1A /* SignupFormRequestModel.swift */; };
 		1A8033B628EEF4ED008D1F1A /* SignupResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A8033B528EEF4ED008D1F1A /* SignupResponseModel.swift */; };
+		1A8033C028EF05BD008D1F1A /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A8033BF28EF05BD008D1F1A /* MockURLProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		1A8033B028EE01F1008D1F1A /* SignupWebservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupWebservice.swift; sourceTree = "<group>"; };
 		1A8033B328EE0316008D1F1A /* SignupFormRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupFormRequestModel.swift; sourceTree = "<group>"; };
 		1A8033B528EEF4ED008D1F1A /* SignupResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupResponseModel.swift; sourceTree = "<group>"; };
+		1A8033BF28EF05BD008D1F1A /* MockURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +153,7 @@
 			children = (
 				1A8033BE28EEF70C008D1F1A /* Services */,
 				1A8033BD28EEF705008D1F1A /* Models */,
+				1A8033BF28EF05BD008D1F1A /* MockURLProtocol.swift */,
 			);
 			path = Signup;
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A8033C028EF05BD008D1F1A /* MockURLProtocol.swift in Sources */,
 				1A8033AE28EE011D008D1F1A /* SignupWebserviceTests.swift in Sources */,
 				1A8033A728ED9C3B008D1F1A /* SignupFormModelValidatorTests.swift in Sources */,
 			);

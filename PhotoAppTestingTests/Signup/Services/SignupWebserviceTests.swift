@@ -20,7 +20,14 @@ final class SignupWebserviceTests: XCTestCase {
 
     func test_SignupWebservice_WhenGivenSuccessfulResponse_ReturnsSuccess() {
         // Assemble
-        let sut = SignupWebservice(urlString: "https://tlyqhtlbn8.execute-api.us-east-1.amazonaws.com/prod/signup-mock-service/users")
+        
+        let config = URLSessionConfiguration.ephemeral
+        config.protocolClasses = [MockURLProtocol.self]
+        let urlSession = URLSession(configuration: config)
+        let jsonString = "{\"status\":\"ok\"}"
+        MockURLProtocol.stubResponseData = jsonString.data(using: .utf8)
+        
+        let sut = SignupWebservice(urlString: SignupConstants.signupUrlString, urlSession: urlSession)
         let signupFormRequestModel = SignupFormRequestModel(firstName: "firstName", lastName: "lastName", email: "firstName.lastName@email.com", password: "password")
         let expectation = self.expectation(description: "Signup Webservice response expectation")
         

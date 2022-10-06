@@ -8,6 +8,7 @@
 import Foundation
 
 struct SignupConstants {
+    static let signupUrlString = "https://tlyqhtlbn8.execute-api.us-east-1.amazonaws.com/prod/signup-mock-service/users"
     static let minNameLength = 2
     static let maxNameLength = 10
     static let minEmailLength = 6
