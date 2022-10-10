@@ -7,7 +7,7 @@
 
 import Foundation
 
-class SignupWebservice {
+class SignupWebservice: SignupWebserviceProtocol {
     
     private let urlSession: URLSession
     private let urlString: String
