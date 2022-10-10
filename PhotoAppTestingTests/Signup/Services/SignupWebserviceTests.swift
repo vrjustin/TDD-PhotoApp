@@ -25,6 +25,7 @@ final class SignupWebserviceTests: XCTestCase {
         sut = nil
         signupFormRequestModel = nil
         MockURLProtocol.stubResponseData = nil
+        MockURLProtocol.error = nil
     }
 
     func test_SignupWebservice_WhenGivenSuccessfulResponse_ReturnsSuccess() {
@@ -72,6 +73,22 @@ final class SignupWebserviceTests: XCTestCase {
             // Assert
             XCTAssertEqual(error, SignupError.invalidRequestUrlString, "The SignupWebservice.signup method did not return an expected error for an invalidRequestUrlString.")
             XCTAssertNil(signupResponseModel, "The SignupWebservice.signup method did not return a nil signupResponseModel when the urlstring is empty.")
+            expectation.fulfill()
+        }
+        
+        self.wait(for: [expectation], timeout: 5)
+    }
+    
+    func test_SignupWebservice_WhenURLRequestFails_ReturnsErrorMessageDescription() {
+        // Assemble
+        let expectation = self.expectation(description: "A failed request expectation")
+        let errorDescription = "The operation couldn’t be completed. (PhotoAppTesting.SignupError error 0.)"
+        MockURLProtocol.error = SignupError.failedRequest(description: errorDescription)
+        
+        // Act
+        sut.signup(withForm: signupFormRequestModel) { signupResponseModel, error in
+            // Assert
+            XCTAssertEqual(error, SignupError.failedRequest(description: errorDescription), "The signup method did not return an expected error for the Failed Request.")
             expectation.fulfill()
         }
         
