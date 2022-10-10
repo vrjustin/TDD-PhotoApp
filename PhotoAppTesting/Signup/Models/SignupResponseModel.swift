@@ -8,8 +8,8 @@
 import Foundation
 
 enum SignupError: Error {
-    case responseModelParsingError
-    case invalidRequestUrlStringError
+    case responseModelParsing
+    case invalidRequestUrlString
 }
 
 struct SignupResponseModel: Decodable {

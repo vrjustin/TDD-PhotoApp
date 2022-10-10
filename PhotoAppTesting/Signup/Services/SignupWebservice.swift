@@ -20,7 +20,7 @@ class SignupWebservice {
     func signup(withForm formModel: SignupFormRequestModel, completion: @escaping(SignupResponseModel?, SignupError?) -> Void) {
         
         guard let url = URL(string: urlString) else {
-            completion(nil, SignupError.invalidRequestUrlStringError)
+            completion(nil, SignupError.invalidRequestUrlString)
             return
         }
         
@@ -36,7 +36,7 @@ class SignupWebservice {
             if let data = data, let signupResponseModel = try? JSONDecoder().decode(SignupResponseModel.self, from: data) {
                 completion(signupResponseModel, nil)
             } else {
-                completion(nil, SignupError.responseModelParsingError)
+                completion(nil, SignupError.responseModelParsing)
             }
                 
         }
