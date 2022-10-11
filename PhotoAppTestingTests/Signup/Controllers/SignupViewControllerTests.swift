@@ -56,5 +56,21 @@ final class SignupViewControllerTests: XCTestCase {
         XCTAssertEqual(actions.count, 1)
         XCTAssertEqual(actions.first, "signupButtonTapped:", "There is no action associated to SignupButton named signupButtonTapped")
     }
+    
+    func test_SignupViewController_WhenSignupButtonTapped_InvokesSignupProcess() {
+        // Assemble
+        let mockSignupModelValidator = MockSignupModelValidator()
+        let mockSignupWebservice = MockSignupWebService()
+        let mockSignupDelegate = MockSignupViewDelegate()
+        let mockSignupPresenter = MockSignupPresenter(formModelValidator: mockSignupModelValidator, webservice: mockSignupWebservice, delegate: mockSignupDelegate)
+        
+        sut.signupPresenter = mockSignupPresenter
+        
+        // Act
+        sut.signupButton.sendActions(for: .touchUpInside)
+        
+        // Assert
+        XCTAssertTrue(mockSignupPresenter.processUserSignupCalled, "The processUserSignup() was not called on the presenter object when the signup button was tapped in the SignupViewController")
+    }
 
 }
