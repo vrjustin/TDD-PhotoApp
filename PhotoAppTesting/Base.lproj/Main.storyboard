@@ -46,6 +46,15 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3lI-Kc-v50">
+                                <rect key="frame" x="137" y="308" width="117" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Signup"/>
+                                <connections>
+                                    <action selector="signupButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BfK-qn-MQk"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -53,6 +62,7 @@
                     <connections>
                         <outlet property="passwordTextField" destination="5HU-QR-jQo" id="ZQ3-zq-0W5"/>
                         <outlet property="repeatPasswordTextField" destination="8xN-56-pfJ" id="Ebn-qL-aZl"/>
+                        <outlet property="signupButton" destination="3lI-Kc-v50" id="HcR-DS-lSf"/>
                         <outlet property="userEmailTextField" destination="54O-c3-bGS" id="exP-RR-LQ2"/>
                         <outlet property="userFirstNameTextField" destination="dhg-VM-v96" id="Wg1-4r-OXE"/>
                         <outlet property="userLastNameTextField" destination="Ija-as-EWH" id="V0Y-c6-4em"/>

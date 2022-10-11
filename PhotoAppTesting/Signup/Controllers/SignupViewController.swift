@@ -10,13 +10,18 @@ import UIKit
 
 class SignupViewController: UIViewController {
     
-    @IBOutlet var userFirstNameTextField: UITextField!
-    @IBOutlet var userLastNameTextField: UITextField!
-    @IBOutlet var userEmailTextField: UITextField!
-    @IBOutlet var passwordTextField: UITextField!
-    @IBOutlet var repeatPasswordTextField: UITextField!
+    @IBOutlet weak var userFirstNameTextField: UITextField!
+    @IBOutlet weak var userLastNameTextField: UITextField!
+    @IBOutlet weak var userEmailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var repeatPasswordTextField: UITextField!
+    @IBOutlet weak var signupButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    @IBAction func signupButtonTapped(_ sender: UIButton) {
+        
     }
 }
